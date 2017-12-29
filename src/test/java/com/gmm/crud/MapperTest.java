@@ -7,7 +7,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.gmm.crud.bean.Department;
+import com.gmm.crud.bean.Employee;
 import com.gmm.crud.dao.DepartmentMapper;
+import com.gmm.crud.dao.EmployeeMapper;
 
 /**
  * 测试dao层的工作
@@ -25,6 +27,9 @@ public class MapperTest {
 	@Autowired
 	DepartmentMapper departmentMapper;
 	
+	@Autowired
+	EmployeeMapper employeeMapper;
+	
 	@Test
 	public void testInsert() {
 		/*	//1、创建SpringIOC容器
@@ -34,9 +39,23 @@ public class MapperTest {
 		System.out.println(departmentMapper);
 		
 		//1、插入几个部门
-		departmentMapper.insertSelective(new Department(null, "开发部"));
-		departmentMapper.insertSelective(new Department(null, "测试部"));
+		departmentMapper.insertSelective(new Department(1, "开发部"));
+		//departmentMapper.insertSelective(new Department(null, "测试部"));
 		
+	}
+	
+	@Test
+	public void testInsertEmp() {
+		employeeMapper.insertSelective(new Employee(null, "hh", "F", "hh@gmail.com", 2));
+		employeeMapper.insertSelective(new Employee(null, "mm", "M", "m@gmail.com", 2));
+	}
+	
+	@Test
+	public void testSelectEmp() {
+		Employee selectByPrimaryKey = employeeMapper.selectByPrimaryKey(1);
+		System.out.println(selectByPrimaryKey);
+		Employee selectByPrimaryKey2 = employeeMapper.selectByPrimaryKey(2);
+		System.out.println(selectByPrimaryKey2);
 	}
 	
 	@Test

@@ -11,7 +11,28 @@ public class Employee {
 
     private Integer dId;
 
-    public Integer getEmpId() {
+    public Employee() {
+		super();
+	}
+    
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", gender=" + gender + ", email=" + email
+				+ ", dId=" + dId + "]";
+	}
+
+
+
+	public Employee(Integer empId, String empName, String gender, String email, Integer dId) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.gender = gender;
+		this.email = email;
+		this.dId = dId;
+	}
+
+	public Integer getEmpId() {
         return empId;
     }
 
