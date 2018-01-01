@@ -147,6 +147,7 @@ $("#emp_add_modal_btn1").click(function(){
 function getDepts(ele){
 	//清空之前下拉列表的值
 	$(ele).empty();
+	
 	$.ajax({
 		url:rootPath+"depts",
 		type:"GET",
