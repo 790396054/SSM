@@ -154,7 +154,7 @@ function getDepts(ele){
 		success:function(result){
 			//{"code":100,"msg":"处理成功！",
 				//"extend":{"depts":[{"deptId":1,"deptName":"开发部"},{"deptId":2,"deptName":"测试部"}]}}
-			//console.log(result);
+			//console.log(result);  
 			//显示部门信息在下拉列表中
 			//$("#empAddModal select").append("")
 			$.each(result.extend.depts,function(){
