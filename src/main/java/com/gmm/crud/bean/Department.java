@@ -5,6 +5,8 @@ public class Department {
 
     private String deptName;
     
+    
+    
     public Department(Integer deptId, String deptName) {
 		super();
 		this.deptId = deptId;
